@@ -1,0 +1,197 @@
+baseURL: "https://seulsale.github.io/"
+title: seulsale
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+pygmentsUseClasses: true
+
+googleAnalytics: UA-148920562-2
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+languages:
+    en:
+        languageName: "🇺en"
+        languageAltTitle: English
+        weight: 1
+        menu:
+            main:
+                - name: Archive
+                  url: archives
+                  weight: 5
+                - name: Search
+                  url: search/
+                  weight: 10
+                - name: Tags
+                  url: tags/
+                  weight: 15
+                - name: Categories
+                  url: categories/
+                  weight: 20
+
+    es:
+        languageName: "🇲es"
+        languageAltTitle: Español
+        weight: 2
+        homeInfoParams:
+          Title: "Sergio Saucedo"
+          Content: >
+            Bienvenidos a mi sitio personal. Soy un Ingeniero de Software trabajando en IBM.
+            Por el momento no tengo el tiempo para mantener actualizado este sitio, pero en 
+            algún momento subire posts de mi trabajo o temas de interés.
+            Para contactarme puedes enviarme un correo a me@seulsale.com
+        menu:
+            main:
+                - name: Archivo
+                  url: archive/
+                  weight: 5
+                - name: Buscar
+                  url: search/
+                  weight: 10
+                - name: Etiquetas
+                  url: tags/
+                  weight: 15
+                - name: Categorias
+                  url: categories/
+                  weight: 20
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    title: ExampleSite
+    description: "Sergio Saucedo's personal website"
+    keywords: [Software, Engineering]
+    author: Me
+    # author: ["Me", "You"] # multiple authors
+    # images: ["<link or path of image for opengraph, twitter-cards>"]
+    DateFormat: "January 2, 2006"
+    defaultTheme: auto # dark, light
+    disableThemeToggle: false
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: false
+    disableSpecial1stPost: false
+    disableScrollToTop: false
+    comments: false
+    hidemeta: false
+    hideSummary: false
+    showtoc: false
+    tocopen: false
+
+    assets:
+        # disableHLJS: true # to disable highlight.js
+        # disableFingerprinting: true
+        favicon: "favicon.ico"
+        favicon16x16: "favicon-16x16.png"
+        favicon32x32: "favicon-32x32.png"
+        apple_touch_icon: "apple-icon.png"
+        safari_pinned_tab: "apple-icon.png"
+
+    label:
+        text: ""
+        icon: /logo.png
+        iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: false # needs to be explicitly set
+        title: ExampleSite
+        subtitle: "This is subtitle"
+        imageUrl: "<img location>"
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: my image
+        buttons:
+            - name: Posts
+              url: posts
+            - name: Tags
+              url: tags
+
+    # home-info mode
+    homeInfoParams:
+        Title: "Sergio Saucedo"
+        Content: >
+            Welcome to my personal website. I am a software engineer working at IBM. 
+            Whenever I find the time and motivaiton here you will be able to read posts
+            about my work or topics of my interest.
+            You can contact me via email at me@seulsale.com
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/seulsale"
+        - name: linkedin
+          url: "https://linkedin.com/in/seulsale"
+        - name: RsS
+          url: "index.xml"
+
+    # analytics:
+    #     google:
+    #         SiteVerificationTag: "XYZabc"
+    #     bing:
+    #         SiteVerificationTag: "XYZabc"
+    #     yandex:
+    #         SiteVerificationTag: "XYZabc"
+
+    cover:
+        hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
+
+    editPost:
+        URL: "https://github.com/seulsale/seulsale.github.io/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true # to append file path to Edit link
+
+    # for search
+    # https://fusejs.io/api/options.html
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+menu:
+    main:
+        - identifier: categories
+          name: categories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: tags
+          url: /tags/
+          weight: 20
+        - identifier: example
+          name: example.org
+          url: https://example.org
+          weight: 30
+
+taxonomies:
+    category: categories
+    tag: tags
+    # series: series
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# pygmentsUseClasses: true
+# markup:
+#     highlight:
+#         # anchorLineNos: true
+#         codeFences: true
+#         guessSyntax: true
+#         lineNos: true
+#         style: monokai
