@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>IBM on Sergio Saucedo</title>
+        <link>http://localhost:1313/tags/ibm/</link>
+        <description>Recent content in IBM on Sergio Saucedo</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Sergio Saucedo</copyright>
+        <lastBuildDate>Thu, 24 Oct 2024 01:45:58 -0600</lastBuildDate><atom:link href="http://localhost:1313/tags/ibm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Get started with Ansible on z/OS</title>
+        <link>http://localhost:1313/p/get-started-with-ansible-on-z/os/</link>
+        <pubDate>Thu, 24 Oct 2024 01:45:58 -0600</pubDate>
+        
+        <guid>http://localhost:1313/p/get-started-with-ansible-on-z/os/</guid>
+        <description>&lt;img src="http://localhost:1313/p/get-started-with-ansible-on-z/os/philip-swinburn-vS7LVkPyXJU-unsplash.jpg" alt="Featured image of post Get started with Ansible on z/OS" /&gt;&lt;p&gt;This post will explain the steps required to setup your control and target nodes to start your automation journey and run Ansible playbooks on z/OS.&lt;/p&gt;
+&lt;p&gt;The first step will be to install Ansible on your machine,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Photo by &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/@pjswinburn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Philip Swinburn&lt;/a&gt; on &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/photos/carving-tool-set-vS7LVkPyXJU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>Run your first playbook on z/OS</title>
+        <link>http://localhost:1313/p/run-your-first-playbook-on-z/os/</link>
+        <pubDate>Thu, 24 Oct 2024 01:45:58 -0600</pubDate>
+        
+        <guid>http://localhost:1313/p/run-your-first-playbook-on-z/os/</guid>
+        <description>&lt;img src="http://localhost:1313/philip-swinburn-vS7LVkPyXJU-unsplash.jpg" alt="Featured image of post Run your first playbook on z/OS" /&gt;&lt;p&gt;Test post&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Photo by &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/@pjswinburn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Philip Swinburn&lt;/a&gt; on &lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/photos/carving-tool-set-vS7LVkPyXJU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unsplash&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
