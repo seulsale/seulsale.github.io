@@ -2,15 +2,17 @@
    Hugo Blox uses @media (prefers-color-scheme: dark) with !important to set
    dark section backgrounds. This fires based on the OS preference and ignores
    the site's .dark class toggle, so switching to light theme leaves sections dark.
-   Counter it by re-asserting the light colors when .dark is absent. */
+   Counter it by re-asserting the light colors when .dark is absent.
+   Note: selectors use short color fragments to match both minified (#fff)
+   and non-minified (#ffffff) inline styles from hugo --minify. */
 @media (prefers-color-scheme: dark) {
   html:not(.dark) {
     color-scheme: light !important;
   }
-  html:not(.dark) .home-section-bg[style*="background-color: #ffffff"] {
+  html:not(.dark) .home-section-bg[style*="#fff"] {
     background-color: #ffffff !important;
   }
-  html:not(.dark) .home-section-bg[style*="background-color: #f0f4f3"] {
+  html:not(.dark) .home-section-bg[style*="#f0f4f3"] {
     background-color: #f0f4f3 !important;
   }
 }

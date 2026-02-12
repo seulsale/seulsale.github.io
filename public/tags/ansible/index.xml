@@ -1,41 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ansible | Sergio Saucedo</title>
-    <link>http://localhost:1313/tags/ansible/</link>
-      <atom:link href="http://localhost:1313/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
-    <description>Ansible</description>
-    <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>http://localhost:1313/media/icon_hu_702a800cd775dbac.png</url>
-      <title>Ansible</title>
-      <link>http://localhost:1313/tags/ansible/</link>
-    </image>
-    
-    <item>
-      <title>Ansible Z Collection</title>
-      <link>http://localhost:1313/projects/project-1/</link>
-      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-1/</guid>
-      <description>&lt;p&gt;An open-source Ansible collection that provides 20+ modules for automating z/OS system administration tasks. Supports job submission, dataset management, USS file operations, and RACF security configuration.&lt;/p&gt;
-&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ansible | Sergio Saucedo</title><link>https://seulsale.com/tags/ansible/</link><atom:link href="https://seulsale.com/tags/ansible/index.xml" rel="self" type="application/rss+xml"/><description>Ansible</description><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0000</lastBuildDate><image><url>https://seulsale.com/media/icon_hu_702a800cd775dbac.png</url><title>Ansible</title><link>https://seulsale.com/tags/ansible/</link></image><item><title>Ansible Z Collection</title><link>https://seulsale.com/projects/project-1/</link><pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-1/</guid><description>&lt;p&gt;An open-source Ansible collection that provides 20+ modules for automating z/OS system administration tasks. Supports job submission, dataset management, USS file operations, and RACF security configuration.&lt;/p&gt;
+&lt;h2 id="key-features"&gt;Key Features&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Job Management&lt;/strong&gt; - Submit JCL, monitor job status, and retrieve output programmatically&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Dataset Operations&lt;/strong&gt; - Create, copy, delete, and manage MVS datasets with idempotent modules&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;USS Integration&lt;/strong&gt; - Full support for Unix System Services file and process management&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;RACF Automation&lt;/strong&gt; - Manage users, groups, and permissions through Ansible playbooks&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Built with Python and tested against z/OS 2.4+ environments. Used in production by several enterprise teams for automated provisioning and compliance enforcement.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Homelab IaC</title>
-      <link>http://localhost:1313/projects/project-2/</link>
-      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-2/</guid>
-      <description>&lt;p&gt;Complete infrastructure as code setup for a multi-node Proxmox homelab. Everything from VM provisioning to service deployment is automated and version controlled.&lt;/p&gt;
-&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
+&lt;p&gt;Built with Python and tested against z/OS 2.4+ environments. Used in production by several enterprise teams for automated provisioning and compliance enforcement.&lt;/p&gt;</description></item><item><title>Homelab IaC</title><link>https://seulsale.com/projects/project-2/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-2/</guid><description>&lt;p&gt;Complete infrastructure as code setup for a multi-node Proxmox homelab. Everything from VM provisioning to service deployment is automated and version controlled.&lt;/p&gt;
+&lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;3-node Proxmox cluster&lt;/strong&gt; with Ceph storage (12TB usable)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;20+ Docker containers&lt;/strong&gt; managed via Compose with Ansible deployment&lt;/li&gt;
@@ -43,28 +15,14 @@
 &lt;li&gt;&lt;strong&gt;Tailscale&lt;/strong&gt; mesh VPN for secure remote access&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Automated backups&lt;/strong&gt; to Backblaze B2 with restic&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;services-deployed&#34;&gt;Services Deployed&lt;/h2&gt;
+&lt;h2 id="services-deployed"&gt;Services Deployed&lt;/h2&gt;
 &lt;p&gt;Media stack (Jellyfin, Sonarr, Radarr), productivity (Gitea, Nextcloud), monitoring (Grafana, Prometheus, Loki), networking (Pi-hole, Traefik), and home automation (Home Assistant, Zigbee2MQTT).&lt;/p&gt;
-&lt;p&gt;All configuration is managed through Ansible roles with encrypted secrets via ansible-vault.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Dotfiles</title>
-      <link>http://localhost:1313/projects/project-5/</link>
-      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-5/</guid>
-      <description>&lt;p&gt;Personal configuration files and system setup automation. Uses GNU Stow for symlinking and an Ansible playbook for bootstrapping new machines from scratch.&lt;/p&gt;
-&lt;h2 id=&#34;included-configs&#34;&gt;Included Configs&lt;/h2&gt;
+&lt;p&gt;All configuration is managed through Ansible roles with encrypted secrets via ansible-vault.&lt;/p&gt;</description></item><item><title>Dotfiles</title><link>https://seulsale.com/projects/project-5/</link><pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-5/</guid><description>&lt;p&gt;Personal configuration files and system setup automation. Uses GNU Stow for symlinking and an Ansible playbook for bootstrapping new machines from scratch.&lt;/p&gt;
+&lt;h2 id="included-configs"&gt;Included Configs&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Neovim&lt;/strong&gt; - LSP, Treesitter, telescope, custom keybindings&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;tmux&lt;/strong&gt; - Status bar, session management, vim-like navigation&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;zsh&lt;/strong&gt; - Starship prompt, custom aliases, fzf integration&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - Global config, commit templates, diff tools&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ansible bootstrap&lt;/strong&gt; - One-command setup for Fedora or macOS&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>
