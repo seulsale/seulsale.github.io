@@ -1,37 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Sergio Saucedo</title>
-        <link>http://localhost:1313/</link>
-        <description>Recent content on Sergio Saucedo</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>Sergio Saucedo</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>About</title>
-        <link>http://localhost:1313/about/</link>
-        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/about/</guid>
-        <description>&lt;p&gt;I&amp;rsquo;m a Software Developer working at IBM, contributing to the Ansible for IBM Z ecosystem.&lt;/p&gt;
+  <channel>
+    <title>Sergio Saucedo</title>
+    <link>http://localhost:1313/</link>
+      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sergio Saucedo</description>
+    <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu_702a800cd775dbac.png</url>
+      <title>Sergio Saucedo</title>
+      <link>http://localhost:1313/</link>
+    </image>
+    
+    <item>
+      <title>Portfolio Site</title>
+      <link>http://localhost:1313/projects/project-3/</link>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/project-3/</guid>
+      <description>&lt;p&gt;Personal portfolio and project showcase built with Hugo and the HugoBlox theme framework. Features a responsive dark-mode design, project cards, experience timeline, and homelab services directory.&lt;/p&gt;
+&lt;p&gt;Deployed automatically to GitHub Pages via a two-stage GitHub Actions workflow (build + deploy) with Hugo Extended and TailwindCSS processing.&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>Archives</title>
-        <link>http://localhost:1313/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Search</title>
-        <link>http://localhost:1313/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/search/</guid>
-        <description></description>
-        </item>
-        
-    </channel>
+    </item>
+    
+    <item>
+      <title>Ansible Z Collection</title>
+      <link>http://localhost:1313/projects/project-1/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/project-1/</guid>
+      <description>&lt;p&gt;An open-source Ansible collection that provides 20+ modules for automating z/OS system administration tasks. Supports job submission, dataset management, USS file operations, and RACF security configuration.&lt;/p&gt;
+&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Job Management&lt;/strong&gt; - Submit JCL, monitor job status, and retrieve output programmatically&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dataset Operations&lt;/strong&gt; - Create, copy, delete, and manage MVS datasets with idempotent modules&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;USS Integration&lt;/strong&gt; - Full support for Unix System Services file and process management&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RACF Automation&lt;/strong&gt; - Manage users, groups, and permissions through Ansible playbooks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Built with Python and tested against z/OS 2.4+ environments. Used in production by several enterprise teams for automated provisioning and compliance enforcement.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Homelab IaC</title>
+      <link>http://localhost:1313/projects/project-2/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/project-2/</guid>
+      <description>&lt;p&gt;Complete infrastructure as code setup for a multi-node Proxmox homelab. Everything from VM provisioning to service deployment is automated and version controlled.&lt;/p&gt;
+&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3-node Proxmox cluster&lt;/strong&gt; with Ceph storage (12TB usable)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;20+ Docker containers&lt;/strong&gt; managed via Compose with Ansible deployment&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Traefik&lt;/strong&gt; reverse proxy with automatic Let&amp;rsquo;s Encrypt certificates&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tailscale&lt;/strong&gt; mesh VPN for secure remote access&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Automated backups&lt;/strong&gt; to Backblaze B2 with restic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;services-deployed&#34;&gt;Services Deployed&lt;/h2&gt;
+&lt;p&gt;Media stack (Jellyfin, Sonarr, Radarr), productivity (Gitea, Nextcloud), monitoring (Grafana, Prometheus, Loki), networking (Pi-hole, Traefik), and home automation (Home Assistant, Zigbee2MQTT).&lt;/p&gt;
+&lt;p&gt;All configuration is managed through Ansible roles with encrypted secrets via ansible-vault.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>zOS Log Analyzer</title>
+      <link>http://localhost:1313/projects/project-4/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/project-4/</guid>
+      <description>&lt;p&gt;A Python CLI tool for parsing and analyzing z/OS system logs. Supports syslog, JES2 job output, and SMF records. Uses configurable pattern matching and threshold-based alerting to detect anomalies in mainframe environments.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Multi-format parsing&lt;/strong&gt; - Handles syslog, JESMSGLG, JESJCL, and SMF record formats&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pattern rules&lt;/strong&gt; - YAML-based rule definitions for custom alert conditions&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - Sends notifications to Slack, PagerDuty, or email&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dashboard export&lt;/strong&gt; - Generates Grafana-compatible JSON for visualization&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dotfiles</title>
+      <link>http://localhost:1313/projects/project-5/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/project-5/</guid>
+      <description>&lt;p&gt;Personal configuration files and system setup automation. Uses GNU Stow for symlinking and an Ansible playbook for bootstrapping new machines from scratch.&lt;/p&gt;
+&lt;h2 id=&#34;included-configs&#34;&gt;Included Configs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Neovim&lt;/strong&gt; - LSP, Treesitter, telescope, custom keybindings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tmux&lt;/strong&gt; - Status bar, session management, vim-like navigation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;zsh&lt;/strong&gt; - Starship prompt, custom aliases, fzf integration&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - Global config, commit templates, diff tools&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ansible bootstrap&lt;/strong&gt; - One-command setup for Fedora or macOS&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
 </rss>

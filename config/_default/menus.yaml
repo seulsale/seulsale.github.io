@@ -1,0 +1,16 @@
+# Navigation Links
+# To link a homepage section, use a hash `#` followed by the section ID.
+
+main:
+  - name: Home
+    url: /
+    weight: 10
+  - name: Projects
+    url: /#projects
+    weight: 20
+  - name: Services
+    url: /#services
+    weight: 30
+  - name: About
+    url: /#about
+    weight: 40

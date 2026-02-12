@@ -1,0 +1,170 @@
+/* ── Fix: OS dark-mode media query overrides section backgrounds ──
+   Hugo Blox uses @media (prefers-color-scheme: dark) with !important to set
+   dark section backgrounds. This fires based on the OS preference and ignores
+   the site's .dark class toggle, so switching to light theme leaves sections dark.
+   Counter it by re-asserting the light colors when .dark is absent. */
+@media (prefers-color-scheme: dark) {
+  html:not(.dark) {
+    color-scheme: light !important;
+  }
+  html:not(.dark) .home-section-bg[style*="background-color: #ffffff"] {
+    background-color: #ffffff !important;
+  }
+  html:not(.dark) .home-section-bg[style*="background-color: #f0f4f3"] {
+    background-color: #f0f4f3 !important;
+  }
+}
+
+/* ── Light mode contrast fixes ── */
+
+/* Section subtitles - bump from gray-500 to gray-700 */
+.hbb-section p.text-gray-500,
+.hbb-section .text-gray-500 {
+  color: var(--color-gray-600, #475569) !important;
+}
+
+/* Prose (markdown blocks) - stronger text and borders in light mode */
+.prose {
+  --tw-prose-body: #334155;
+  --tw-prose-headings: #0f172a;
+  --tw-prose-bold: #1e293b;
+  --tw-prose-links: var(--color-primary-600, #059669);
+  --tw-prose-th-borders: #cbd5e1;
+  --tw-prose-td-borders: #e2e8f0;
+}
+
+/* Table readability in light mode */
+.prose table {
+  font-size: 0.95rem;
+}
+
+.prose thead th {
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom-width: 2px;
+  border-bottom-color: #94a3b8;
+}
+
+.prose tbody td {
+  color: #334155;
+  border-bottom-color: #e2e8f0;
+}
+
+.prose tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Dark mode - keep original prose styling */
+.dark .prose {
+  --tw-prose-body: #cbd5e1;
+  --tw-prose-headings: #f1f5f9;
+  --tw-prose-bold: #e2e8f0;
+  --tw-prose-links: var(--color-primary-400, #34d399);
+  --tw-prose-th-borders: #475569;
+  --tw-prose-td-borders: #334155;
+}
+
+.dark .prose thead th {
+  color: #f1f5f9;
+  border-bottom-color: #475569;
+}
+
+.dark .prose tbody td {
+  color: #cbd5e1;
+  border-bottom-color: #334155;
+}
+
+.dark .prose tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Homelab services grid cards ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: var(--color-primary-400, #34d399);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.service-card .service-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #f0fdf4;
+  color: var(--color-primary-600, #059669);
+  font-size: 1.25rem;
+}
+
+.service-card .service-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.service-card .service-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.service-card .service-info a {
+  font-size: 0.8rem;
+  color: var(--color-primary-600, #059669);
+  text-decoration: none;
+}
+
+.service-card .service-info a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode service cards */
+.dark .service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .service-card:hover {
+  border-color: var(--color-primary-500, #10b981);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .service-card .service-icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-primary-400, #34d399);
+}
+
+.dark .service-card .service-info h4 {
+  color: #f1f5f9;
+}
+
+.dark .service-card .service-info p {
+  color: #94a3b8;
+}
+
+.dark .service-card .service-info a {
+  color: var(--color-primary-400, #34d399);
+}

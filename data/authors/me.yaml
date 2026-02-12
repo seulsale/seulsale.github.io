@@ -1,0 +1,100 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Sergio Saucedo
+  given: Sergio
+  family: Saucedo
+postnominals: []
+status:
+  icon: "💻"
+role: Software Developer at IBM
+email: "sergio@example.com"
+bio: |
+  Contributing to the Ansible for IBM Z ecosystem. With over five years of experience
+  in systems automation and infrastructure engineering, I specialize in bridging
+  legacy mainframe environments with modern DevOps practices. When I'm not writing
+  playbooks, I'm tinkering with my homelab or contributing to open source projects.
+
+affiliations:
+  - name: IBM
+    url: https://www.ibm.com
+
+links:
+  - icon: at-symbol
+    url: mailto:sergio@example.com
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/seulsale
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/seulsale/
+
+interests:
+  - Ansible Automation
+  - IBM Z & Mainframes
+  - Open Source
+  - Homelab & Self-Hosting
+  - Linux Systems
+
+education:
+  - degree: B.S. Computer Science
+    institution: University of Texas at Austin
+    start: 2016-09-01
+    end: 2020-05-31
+    summary: |
+      Focus on systems programming and distributed computing.
+      Senior capstone on automated mainframe provisioning.
+
+experience:
+  - role: Software Developer
+    org: IBM
+    start: 2022-03-01
+    summary: |
+      Contributing to the Ansible for IBM Z ecosystem, building collections
+      and modules that automate z/OS operations. Collaborating with cross-functional
+      teams to modernize mainframe workflows through infrastructure as code.
+      Mentoring junior developers on Ansible best practices.
+  - role: Systems Engineer
+    org: Acme Cloud Solutions
+    start: 2020-06-01
+    end: 2022-02-28
+    summary: |
+      Designed and maintained CI/CD pipelines for hybrid cloud deployments.
+      Automated infrastructure provisioning using Terraform and Ansible.
+      Reduced deployment time by 60% through pipeline optimization.
+  - role: DevOps Intern
+    org: Lorem Tech Inc.
+    start: 2019-06-01
+    end: 2019-08-31
+    summary: |
+      Built monitoring dashboards with Grafana and Prometheus.
+      Wrote Python scripts to automate log analysis and alerting.
+
+skills:
+  - name: Automation
+    items:
+      - label: Ansible
+        level: 5
+      - label: CI/CD
+        level: 4
+      - label: Terraform
+        level: 3
+  - name: Development
+    items:
+      - label: Python
+        level: 5
+      - label: Go
+        level: 3
+      - label: Bash
+        level: 5
+  - name: Infrastructure
+    items:
+      - label: Docker
+        level: 4
+      - label: Linux
+        level: 5
+      - label: Kubernetes
+        level: 3
+
+languages: []
+awards: []

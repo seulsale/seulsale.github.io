@@ -1,0 +1,197 @@
+# ============================================================================
+# CONTENT TEMPLATE - Fill this in and I'll update the site
+# Delete or leave blank anything you don't want shown
+# ============================================================================
+
+# --- ABOUT YOU ---
+name: "Sergio Saucedo"
+role: "Software Developer at IBM"           # shown under your name
+status_emoji: "💻"                           # emoji badge on avatar (or leave blank)
+email: ""                                    # shown on site? leave blank to hide
+
+bio: |
+  Contributing to the Ansible for IBM Z ecosystem.
+  Passionate about automation, open source, and homelab infrastructure.
+  # Feel free to expand this - 2-4 sentences is ideal
+
+# Hero section - the first thing visitors see
+hero:
+  greeting: "Hi, I'm"                       # text before your name
+  # Typewriter effect - rotating phrases after "I build" (or change the prefix)
+  typewriter_prefix: "I build"
+  typewriter_phrases:
+    - "automation for IBM Z"
+    - "homelab infrastructure"
+    - "open source tools"
+    # add/change these to whatever describes you
+  # Call-to-action buttons
+  cta_buttons:
+    - text: "View My Work"
+      url: "#projects"
+    - text: "Get In Touch"
+      url: "#contact"                        # or link to LinkedIn, email, etc.
+
+# --- SOCIAL LINKS ---
+# These show as icons on your profile. Delete any you don't use.
+social_links:
+  - platform: github
+    url: "https://github.com/seulsale"
+  - platform: linkedin
+    url: "https://www.linkedin.com/in/seulsale/"
+  # - platform: twitter/x
+  #   url: ""
+  # - platform: email
+  #   url: "mailto:you@example.com"
+  # - platform: mastodon
+  #   url: ""
+
+# --- EXPERIENCE ---
+# Work history - shown as a timeline. Most recent first.
+experience:
+  - title: "Software Developer"
+    company: "IBM"
+    company_url: "https://www.ibm.com"
+    location: ""                             # e.g. "Austin, TX" or "Remote"
+    start_date: "2024-01-01"                 # approximate is fine
+    end_date: ""                             # leave blank if current
+    description: |
+      - Contributing to the Ansible for IBM Z ecosystem
+      - (add more bullet points about what you do)
+  # - title: "Previous Role"
+  #   company: "Previous Company"
+  #   company_url: ""
+  #   location: ""
+  #   start_date: "2022-01-01"
+  #   end_date: "2023-12-31"
+  #   description: |
+  #     - What you did there
+
+# --- TECH STACK ---
+# Grouped by category. These render as icon grids.
+# Available icons: https://devicon.dev/ (use devicon/name)
+# Also: brands/github, brands/linkedin, hero/server, hero/server-stack, etc.
+tech_stack:
+  - category: "Automation"
+    items:
+      - name: "Ansible"
+        icon: "devicon/ansible"
+      - name: "GitHub Actions"
+        icon: "brands/github"
+      # add more...
+  - category: "Languages"
+    items:
+      - name: "Python"
+        icon: "devicon/python"
+      - name: "Bash"
+        icon: "devicon/bash"
+      # - name: "Go"
+      #   icon: "devicon/go"
+      # add more...
+  - category: "Platforms"
+    items:
+      - name: "Linux"
+        icon: "devicon/linux"
+      - name: "IBM Z"
+        icon: "hero/server"
+      # - name: "z/OS"
+      #   icon: "hero/server"
+  - category: "Infrastructure"
+    items:
+      - name: "Docker"
+        icon: "devicon/docker"
+      - name: "Proxmox"
+        icon: "hero/server-stack"
+      # - name: "Kubernetes"
+      #   icon: "devicon/kubernetes"
+      # - name: "Terraform"
+      #   icon: "devicon/terraform"
+      # - name: "Tailscale"
+      #   icon: "hero/shield-check"
+
+# --- PROJECTS ---
+# Each project becomes a card. Add as many as you want.
+# Put the most impressive ones first.
+projects:
+  - title: "Ansible Playbooks Collection"
+    summary: "A collection of reusable Ansible playbooks for automating IBM Z environments and homelab infrastructure."
+    tags: ["Ansible", "Automation", "IBM Z"]
+    github_url: "https://github.com/seulsale"         # link to the repo
+    live_url: ""                                        # link to live demo if any
+    # For a thumbnail image, place it at:
+    # content/projects/project-1/featured.jpg (or .png)
+
+  - title: "Homelab Infrastructure"
+    summary: "Self-hosted homelab setup running Proxmox, Docker containers, and various services with automated deployment."
+    tags: ["Homelab", "Docker", "Linux"]
+    github_url: "https://github.com/seulsale"
+    live_url: ""
+
+  - title: "Personal Portfolio Site"
+    summary: "This portfolio site built with Hugo and HugoBlox, deployed on GitHub Pages with automated CI/CD."
+    tags: ["Hugo", "Web", "CI/CD"]
+    github_url: "https://github.com/seulsale/seulsale.github.io"
+    live_url: "https://seulsale.com"
+
+  # - title: "Another Project"
+  #   summary: "Description of what it does"
+  #   tags: ["tag1", "tag2"]
+  #   github_url: ""
+  #   live_url: ""
+
+# --- HOMELAB SERVICES ---
+# Services you self-host. Each gets a name, description, and optional URL.
+homelab_services:
+  - name: "Proxmox"
+    description: "Virtualization platform"
+    url: ""                                  # e.g. "https://proxmox.seulsale.com" (leave blank if not public)
+    icon: "hero/server-stack"
+
+  - name: "Docker"
+    description: "Container orchestration"
+    url: ""
+    icon: "devicon/docker"
+
+  - name: "Tailscale"
+    description: "Mesh VPN"
+    url: ""
+    icon: "hero/shield-check"
+
+  - name: "Home Assistant"
+    description: "Home automation"
+    url: ""
+    icon: "hero/home"
+
+  # Add more services:
+  # - name: "Jellyfin"
+  #   description: "Media server"
+  #   url: "https://media.seulsale.com"
+  #   icon: "hero/film"
+  # - name: "Gitea"
+  #   description: "Self-hosted Git"
+  #   url: ""
+  #   icon: "brands/github"
+  # - name: "Grafana"
+  #   description: "Monitoring dashboards"
+  #   url: ""
+  #   icon: "devicon/grafana"
+  # - name: "Pi-hole"
+  #   description: "Network-wide ad blocking"
+  #   url: ""
+  #   icon: "hero/funnel"
+
+# --- EDUCATION (optional) ---
+# Uncomment and fill in if you want to show education
+# education:
+#   - degree: "B.S. Computer Science"
+#     institution: "University Name"
+#     start: "2018-09-01"
+#     end: "2022-05-31"
+#     summary: ""
+
+# --- INTERESTS (shown in bio sidebar) ---
+interests:
+  - "Ansible Automation"
+  - "IBM Z"
+  - "Open Source"
+  - "Homelab"
+  - "Linux"
