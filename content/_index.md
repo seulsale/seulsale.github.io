@@ -255,7 +255,7 @@ sections:
               <p>Mesh VPN</p>
             </div>
           </div>
-          <a href="https://hassistant.seulsale.com" target="_blank" rel="noopener"
+          <a href="https://hassistant.seulsale.com" target="_blank" rel="noopener" class="service-card">
           <div class="service-card">
             <div class="service-icon">&#127968;</div>
             <div class="service-info">
