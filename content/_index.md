@@ -156,22 +156,6 @@ sections:
             * Led DevSecOps migration initiatives across 7+ enterprise teams
             * Delivered technical workshops and demos to Fortune 500 clients
             * Developed internal platforms and tooling used across multiple teams
-    design:
-      columns: '1'
-      background:
-        color:
-          light: "#ffffff"
-          dark: "#0d0d12"
-      spacing:
-        padding: ["4rem", "0", "4rem", "0"]
-
-  # Education
-  - block: resume-experience
-    id: education
-    content:
-      title: Education
-      date_format: Jan 2006
-      items:
         - title: Computer Systems Engineering
           company: Instituto Tecnológico de Saltillo
           company_url: ''
@@ -184,8 +168,8 @@ sections:
       columns: '1'
       background:
         color:
-          light: "#f0f4f3"
-          dark: "#08080c"
+          light: "#ffffff"
+          dark: "#0d0d12"
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 
