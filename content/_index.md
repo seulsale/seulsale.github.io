@@ -65,7 +65,7 @@ sections:
         - name: Backend
           items:
             - name: Django
-              icon: devicon/django
+              icon: devicon/python
             - name: FastAPI
               icon: devicon/fastapi
             - name: Node.js
@@ -166,14 +166,17 @@ sections:
         padding: ["4rem", "0", "4rem", "0"]
 
   # Education
-  - block: resume-education
+  - block: resume-experience
     id: education
     content:
       title: Education
       date_format: Jan 2006
       items:
         - title: Computer Systems Engineering
-          institution: Instituto Tecnológico de Saltillo
+          company: Instituto Tecnológico de Saltillo
+          company_url: ''
+          company_logo: ''
+          location: Saltillo, MX
           date_start: ''
           date_end: '2021-01-01'
           description: ''
