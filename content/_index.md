@@ -119,7 +119,7 @@ sections:
       title: Experience
       date_format: Jan 2006
       items:
-        - title: Software Engineer (Contractor)
+        - title: Senior Software Engineer (Contractor)
           company: Enterprise Industrial Clients
           company_url: ''
           company_logo: ''
@@ -127,12 +127,12 @@ sections:
           date_start: '2026-01-06'
           date_end: ''
           description: |2-
-            * Contracting for major automotive companies on platform modernization initiatives
-            * Leading legacy-to-modern migrations using Python, React, and Azure (Entra ID, Azure DevOps)
-            * Building IoT-integrated systems, data pipelines, and internal tooling with Python and Kubernetes
-            * Implementing RBAC access models, modern auth patterns, and cloud-native architectures
+            * Leading a full legacy-to-modern migration of a lab test execution platform for a global automotive safety manufacturer
+            * Designing a server-edge architecture with FastAPI, Celery, React/TypeScript, and Kubernetes (Tanzu)
+            * Building edge workers that communicate with data acquisition hardware via RS232 and TCP/IP sockets
+            * Implementing Entra ID auth with RBAC, OpenTelemetry observability, and CI/CD with signed artifacts
             * Collaborating with hardware engineers and manufacturing stakeholders to define migration priorities
-        - title: Founder & Full Stack Developer
+        - title: Co-founder & Solo Developer
           company: ClinicNet
           company_url: 'https://clinicnet.app'
           company_logo: ''
@@ -144,7 +144,7 @@ sections:
             * Architected with Django + django-tenants, Next.js frontend, and Stripe subscription billing
             * Integrated WhatsApp Business API for automated appointment reminders
             * Solo developer handling architecture, development, deployment, and customer support
-        - title: Advisory Software Engineer
+        - title: Staff Software Engineer
           company: IBM
           company_url: 'https://www.ibm.com'
           company_logo: ''
@@ -156,6 +156,30 @@ sections:
             * Led DevSecOps migration initiatives across 7+ enterprise teams
             * Delivered technical workshops and demos to Fortune 500 clients
             * Developed internal platforms and tooling used across multiple teams
+        - title: Python Developer
+          company: Softtek
+          company_url: 'https://www.softtek.com'
+          company_logo: ''
+          location: Monterrey, MX (Remote)
+          date_start: '2021-03-01'
+          date_end: '2022-01-31'
+          description: |2-
+            * Maintained a Django/Angular network management platform used by 100+ engineers at a major US health insurance company
+            * Led ServiceNow and third-party API integrations, syncing 30,000+ network devices as a single source of truth
+            * Migrated custom modules to the NetBox Plugins architecture, significantly reducing technical debt
+            * Mentored junior developers and presented feature demos to stakeholders
+        - title: Full Stack Developer
+          company: Introid Inc
+          company_url: 'https://introid.com'
+          company_logo: ''
+          location: Ramos Arizpe, MX
+          date_start: '2020-10-01'
+          date_end: '2021-03-01'
+          description: |2-
+            * Developed a face recognition web application for a major Mexican airline using Django and React
+            * Implemented task queues with Celery for long-running and scheduled jobs
+            * Designed and deployed AWS infrastructure (VPC, EC2, RDS, ElastiCache, CodeDeploy) with CI/CD
+            * Practiced TDD with Django testing utilities and Selenium
         - title: Computer Systems Engineering
           company: Instituto Tecnológico de Saltillo
           company_url: ''
@@ -231,6 +255,7 @@ sections:
               <p>Mesh VPN</p>
             </div>
           </div>
+          <a href="https://hassistant.seulsale.com" target="_blank" rel="noopener"
           <div class="service-card">
             <div class="service-icon">&#127968;</div>
             <div class="service-info">
@@ -238,6 +263,7 @@ sections:
               <p>Home automation</p>
             </div>
           </div>
+          </a>
           <a href="https://ollama.seulsale.com" target="_blank" rel="noopener" class="service-card">
             <div class="service-icon">&#129504;</div>
             <div class="service-info">

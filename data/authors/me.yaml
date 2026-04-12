@@ -54,9 +54,9 @@ experience:
     org: Enterprise Industrial Clients
     start: 2026-01-06
     summary: |
-      Contracting for major automotive companies on platform modernization initiatives.
-      Leading legacy-to-modern migrations using Python, React, and Azure (Entra ID, Azure DevOps).
-      Building IoT-integrated systems, data pipelines, and internal tooling with Python and Kubernetes.
+      Leading a full legacy-to-modern migration of a lab test execution platform for a global automotive safety manufacturer.
+      Designing a server-edge architecture with FastAPI, Celery, React/TypeScript, and Kubernetes (Tanzu).
+      Building edge workers that communicate with data acquisition hardware via RS232 and TCP/IP sockets.
   - role: Founder & Full Stack Developer
     org: ClinicNet
     start: 2024-01-01
@@ -73,6 +73,22 @@ experience:
       Contributed to the Ansible for IBM Z ecosystem, building automation for
       mainframe environments. Led DevSecOps migration initiatives across 7+
       enterprise teams. Delivered technical workshops and demos to Fortune 500 clients.
+  - role: Software Engineer
+    org: Softtek
+    start: 2021-03-01
+    end: 2022-01-31
+    summary: |
+      Maintained a Django/Angular network management platform used by 100+ engineers at a major US health insurance company.
+      Led ServiceNow and third-party API integrations, syncing 30,000+ network devices as a single source of truth.
+      Migrated custom modules to the NetBox Plugins architecture, significantly reducing technical debt.
+  - role: Full Stack Developer
+    org: Introid Inc
+    start: 2020-10-01
+    end: 2021-03-01
+    summary: |
+      Developed a face recognition web application for a major Mexican airline using Django and React.
+      Implemented task queues with Celery for long-running and scheduled jobs.
+      Designed and deployed AWS infrastructure (VPC, EC2, RDS, ElastiCache, CodeDeploy) with CI/CD.
 
 skills:
   - name: Languages
