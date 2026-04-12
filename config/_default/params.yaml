@@ -3,10 +3,10 @@ hugoblox:
 
   identity:
     name: "Sergio Saucedo"
-    organization: "IBM"
+    organization: ""
     type: person
-    tagline: "Software Developer"
-    description: "Personal portfolio of Sergio Saucedo - Software Developer at IBM, contributing to the Ansible for IBM Z ecosystem."
+    tagline: "Software Engineer"
+    description: "Personal portfolio of Sergio Saucedo - Software Engineer specializing in platform migrations, SaaS, and automation."
     social:
       twitter: ""
 
