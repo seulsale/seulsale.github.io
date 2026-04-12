@@ -1,21 +1,29 @@
 ---
-title: Portfolio Site
-date: 2026-02-10
-summary: This portfolio site built with Hugo and HugoBlox, featuring dark mode, project showcases, and automated CI/CD deployment to GitHub Pages.
+title: Hybrid Cloud Homelab
+date: 2025-04-01
+summary: "Self-hosted infrastructure running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts LLM inference (Ollama), containerized services, and automated deployments across a VMware ESXi + Docker + ECS stack."
 tags:
-  - Hugo
-  - Web
-  - CI/CD
+  - AWS ECS
+  - VMware ESXi
+  - Docker
+  - Ollama
+  - Hybrid Cloud
 links:
   - type: github
-    url: https://github.com/seulsale/seulsale.github.io
+    url: https://github.com/seulsale
     label: Code
   - type: live
-    url: https://seulsale.com
+    url: https://ollama.seulsale.com
     label: Live
 featured: true
 ---
 
-Personal portfolio and project showcase built with Hugo and the HugoBlox theme framework. Features a responsive dark-mode design, project cards, experience timeline, and homelab services directory.
+Self-hosted infrastructure running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts LLM inference (Ollama), containerized services, and automated deployments across a VMware ESXi + Docker + ECS stack.
 
-Deployed automatically to GitHub Pages via a two-stage GitHub Actions workflow (build + deploy) with Hugo Extended and TailwindCSS processing.
+## Stack
+
+- **VMware ESXi** - Bare-metal hypervisor for VM management
+- **AWS ECS Anywhere** - Hybrid cloud container orchestration across local and cloud resources
+- **Docker** - Container runtime for all self-hosted services
+- **Ollama** - Self-hosted LLM inference engine
+- **Tailscale** - Mesh VPN for secure remote access

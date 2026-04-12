@@ -13,17 +13,17 @@ sections:
     id: hero
     content:
       username: me
-      greeting: "Hi, I'm"
+      greeting: "Hey, I'm"
       show_status: true
       show_scroll_indicator: true
       typewriter:
         enable: true
         prefix: "I build"
         strings:
-          - "automation for IBM Z"
+          - "SaaS products from scratch"
+          - "enterprise migration platforms"
+          - "automation for everything"
           - "homelab infrastructure"
-          - "open source tools"
-          - "CI/CD pipelines"
         type_speed: 70
         delete_speed: 40
         pause_time: 2500
@@ -52,38 +52,56 @@ sections:
       title: "Tech Stack"
       subtitle: "Technologies I work with daily"
       categories:
-        - name: Automation
-          items:
-            - name: Ansible
-              icon: devicon/ansible
-            - name: Terraform
-              icon: devicon/terraform
-            - name: GitHub Actions
-              icon: brands/github
         - name: Languages
           items:
             - name: Python
               icon: devicon/python
-            - name: Go
-              icon: devicon/go
+            - name: JavaScript
+              icon: devicon/javascript
+            - name: TypeScript
+              icon: devicon/typescript
             - name: Bash
               icon: devicon/bash
+        - name: Backend
+          items:
+            - name: Django
+              icon: devicon/django
+            - name: FastAPI
+              icon: devicon/fastapi
+            - name: Node.js
+              icon: devicon/nodejs
+        - name: Frontend
+          items:
+            - name: React
+              icon: devicon/react
+            - name: Next.js
+              icon: devicon/nextjs
+        - name: Cloud & Infrastructure
+          items:
+            - name: Azure
+              icon: devicon/azure
+            - name: AWS
+              icon: devicon/amazonwebservices
+            - name: Docker
+              icon: devicon/docker
+            - name: Kubernetes
+              icon: devicon/kubernetes
+            - name: VMware ESXi
+              icon: hero/server-stack
+        - name: Automation & DevOps
+          items:
+            - name: Ansible
+              icon: devicon/ansible
+            - name: GitHub Actions
+              icon: brands/github
+            - name: Azure DevOps
+              icon: devicon/azure
         - name: Platforms
           items:
             - name: Linux
               icon: devicon/linux
             - name: IBM Z
               icon: hero/server
-            - name: RHEL
-              icon: devicon/redhat
-        - name: Infrastructure
-          items:
-            - name: Docker
-              icon: devicon/docker
-            - name: Kubernetes
-              icon: devicon/kubernetes
-            - name: Proxmox
-              icon: hero/server-stack
     design:
       style: grid
       show_levels: false
@@ -101,47 +119,70 @@ sections:
       title: Experience
       date_format: Jan 2006
       items:
-        - title: Software Developer
+        - title: Software Engineer (Contractor)
+          company: Enterprise Industrial Clients
+          company_url: ''
+          company_logo: ''
+          location: Saltillo, MX
+          date_start: '2026-01-06'
+          date_end: ''
+          description: |2-
+            * Contracting for major automotive companies on platform modernization initiatives
+            * Leading legacy-to-modern migrations using Python, React, and Azure (Entra ID, Azure DevOps)
+            * Building IoT-integrated systems, data pipelines, and internal tooling with Python and Kubernetes
+            * Implementing RBAC access models, modern auth patterns, and cloud-native architectures
+            * Collaborating with hardware engineers and manufacturing stakeholders to define migration priorities
+        - title: Founder & Full Stack Developer
+          company: ClinicNet
+          company_url: 'https://clinicnet.app'
+          company_logo: ''
+          location: Remote
+          date_start: '2024-01-01'
+          date_end: ''
+          description: |2-
+            * Built and launched a profitable multi-tenant B2B SaaS serving 120+ paying dental clinics
+            * Architected with Django + django-tenants, Next.js frontend, and Stripe subscription billing
+            * Integrated WhatsApp Business API for automated appointment reminders
+            * Solo developer handling architecture, development, deployment, and customer support
+        - title: Advisory Software Engineer
           company: IBM
           company_url: 'https://www.ibm.com'
           company_logo: ''
-          location: Austin, TX
-          date_start: '2022-03-01'
-          date_end: ''
-          description: |2-
-            * Contributing to the Ansible for IBM Z ecosystem, building collections and modules that automate z/OS operations
-            * Collaborating with cross-functional teams to modernize mainframe workflows through infrastructure as code
-            * Mentoring junior developers on Ansible best practices and z/OS automation patterns
-            * Shipped 3 major Ansible collection releases used by Fortune 500 enterprises
-        - title: Systems Engineer
-          company: Acme Cloud Solutions
-          company_url: 'https://example.com'
-          company_logo: ''
           location: Remote
-          date_start: '2020-06-01'
-          date_end: '2022-02-28'
+          date_start: '2022-02-01'
+          date_end: '2025-11-30'
           description: |2-
-            * Designed and maintained CI/CD pipelines for hybrid cloud deployments across AWS and on-prem
-            * Automated infrastructure provisioning using Terraform and Ansible for 200+ servers
-            * Reduced deployment time by 60% through pipeline optimization and parallelization
-            * Implemented monitoring stack with Prometheus, Grafana, and custom alerting
-        - title: DevOps Intern
-          company: Lorem Tech Inc.
-          company_url: 'https://example.com'
-          company_logo: ''
-          location: San Francisco, CA
-          date_start: '2019-06-01'
-          date_end: '2019-08-31'
-          description: |2-
-            * Built monitoring dashboards with Grafana and Prometheus for microservices fleet
-            * Wrote Python scripts to automate log analysis and reduce MTTR by 30%
-            * Contributed to internal Ansible roles for developer environment provisioning
+            * Contributed to the Ansible for IBM Z ecosystem, building automation for mainframe environments
+            * Led DevSecOps migration initiatives across 7+ enterprise teams
+            * Delivered technical workshops and demos to Fortune 500 clients
+            * Developed internal platforms and tooling used across multiple teams
     design:
       columns: '1'
       background:
         color:
           light: "#ffffff"
           dark: "#0d0d12"
+      spacing:
+        padding: ["4rem", "0", "4rem", "0"]
+
+  # Education
+  - block: resume-education
+    id: education
+    content:
+      title: Education
+      date_format: Jan 2006
+      items:
+        - title: Computer Systems Engineering
+          institution: Instituto Tecnológico de Saltillo
+          date_start: ''
+          date_end: '2021-01-01'
+          description: ''
+    design:
+      columns: '1'
+      background:
+        color:
+          light: "#f0f4f3"
+          dark: "#08080c"
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 
@@ -158,12 +199,12 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Ansible
-          tag: Ansible
-        - name: Homelab
-          tag: Homelab
+        - name: SaaS
+          tag: SaaS
         - name: Python
           tag: Python
+        - name: Homelab
+          tag: Homelab
       default_button_index: 0
     design:
       columns: 3
@@ -179,63 +220,49 @@ sections:
     id: services
     content:
       title: "Homelab Services"
-      subtitle: "Self-hosted on a multi-node Proxmox cluster, managed with Ansible"
+      subtitle: "Self-hosted infrastructure managed with Docker and Ansible"
       text: |-
         <div class="services-grid">
-          <a href="https://pve.lab.seulsale.com" target="_blank" rel="noopener" class="service-card">
+          <div class="service-card">
             <div class="service-icon">&#9881;</div>
             <div class="service-info">
-              <h4>Proxmox VE</h4>
-              <p>Virtualization cluster &mdash; 3 nodes, 96 GB RAM</p>
+              <h4>VMware ESXi</h4>
+              <p>Bare-metal hypervisor</p>
             </div>
-          </a>
-          <a href="https://git.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#128193;</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">&#128230;</div>
             <div class="service-info">
-              <h4>Gitea</h4>
-              <p>Self-hosted Git with CI runners</p>
+              <h4>Docker</h4>
+              <p>Container orchestration</p>
             </div>
-          </a>
-          <a href="https://grafana.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#128200;</div>
-            <div class="service-info">
-              <h4>Grafana</h4>
-              <p>Monitoring dashboards &amp; alerting</p>
-            </div>
-          </a>
-          <a href="https://media.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#127909;</div>
-            <div class="service-info">
-              <h4>Jellyfin</h4>
-              <p>Media server with hardware transcoding</p>
-            </div>
-          </a>
-          <a href="https://ha.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#127968;</div>
-            <div class="service-info">
-              <h4>Home Assistant</h4>
-              <p>Home automation hub &mdash; 40+ devices</p>
-            </div>
-          </a>
-          <a href="https://dns.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#128737;</div>
-            <div class="service-info">
-              <h4>Pi-hole</h4>
-              <p>Network-wide DNS ad blocking</p>
-            </div>
-          </a>
+          </div>
           <div class="service-card">
             <div class="service-icon">&#128274;</div>
             <div class="service-info">
               <h4>Tailscale</h4>
-              <p>Mesh VPN connecting all nodes</p>
+              <p>Mesh VPN</p>
             </div>
           </div>
           <div class="service-card">
-            <div class="service-icon">&#128256;</div>
+            <div class="service-icon">&#127968;</div>
             <div class="service-info">
-              <h4>Traefik</h4>
-              <p>Reverse proxy with automatic TLS</p>
+              <h4>Home Assistant</h4>
+              <p>Home automation</p>
+            </div>
+          </div>
+          <a href="https://ollama.seulsale.com" target="_blank" rel="noopener" class="service-card">
+            <div class="service-icon">&#129504;</div>
+            <div class="service-info">
+              <h4>Ollama</h4>
+              <p>Self-hosted LLM inference</p>
+            </div>
+          </a>
+          <div class="service-card">
+            <div class="service-icon">&#9729;</div>
+            <div class="service-info">
+              <h4>AWS ECS Anywhere</h4>
+              <p>Hybrid cloud container orchestration</p>
             </div>
           </div>
         </div>
@@ -255,9 +282,9 @@ sections:
       title: Get In Touch
       subtitle: "Let's connect"
       text: |-
-        I'm always happy to chat about automation, homelab setups, open source,
+        I'm always happy to chat about SaaS, automation, homelab setups,
         or potential collaboration opportunities. Feel free to reach out!
-      email: sergio@example.com
+      email: contact@seulsale.com
       autolink: true
     design:
       columns: '1'
@@ -273,8 +300,8 @@ sections:
     content:
       title: "Open to Opportunities"
       text: |-
-        Interested in working together? I'm always open to discussing **automation engineering**,
-        **DevOps**, or **infrastructure** roles.
+        Interested in working together? I'm always open to discussing **software engineering**,
+        **full-stack development**, or **platform modernization** opportunities.
       button:
         text: 'View My LinkedIn'
         url: https://www.linkedin.com/in/seulsale/

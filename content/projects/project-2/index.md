@@ -1,31 +1,22 @@
 ---
-title: Homelab IaC
-date: 2025-04-01
-summary: Infrastructure as code repository for my entire homelab - Proxmox cluster provisioning, Docker Compose stacks, Ansible playbooks, and automated backups.
+title: Qanto
+date: 2025-06-01
+summary: "Personal finance management app built with FastAPI and Vite/React. Designed for simplicity and fast iteration."
 tags:
-  - Homelab
-  - Docker
-  - Ansible
-  - Linux
+  - FastAPI
+  - React
+  - Python
 links:
   - type: github
-    url: https://github.com/seulsale/homelab-iac
+    url: https://github.com/seulsale
     label: Code
 featured: true
 ---
 
-Complete infrastructure as code setup for a multi-node Proxmox homelab. Everything from VM provisioning to service deployment is automated and version controlled.
+Personal finance management application designed for simplicity and fast iteration. Built with a FastAPI backend and a Vite/React frontend.
 
-## Architecture
+## Tech Stack
 
-- **3-node Proxmox cluster** with Ceph storage (12TB usable)
-- **20+ Docker containers** managed via Compose with Ansible deployment
-- **Traefik** reverse proxy with automatic Let's Encrypt certificates
-- **Tailscale** mesh VPN for secure remote access
-- **Automated backups** to Backblaze B2 with restic
-
-## Services Deployed
-
-Media stack (Jellyfin, Sonarr, Radarr), productivity (Gitea, Nextcloud), monitoring (Grafana, Prometheus, Loki), networking (Pi-hole, Traefik), and home automation (Home Assistant, Zigbee2MQTT).
-
-All configuration is managed through Ansible roles with encrypted secrets via ansible-vault.
+- **Backend** - FastAPI with Python for a lightweight, high-performance API
+- **Frontend** - React with Vite for fast development and hot module replacement
+- **Design** - Focused on clean UX and practical daily use

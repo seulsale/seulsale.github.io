@@ -1,29 +1,31 @@
 ---
-title: Ansible Z Collection
-date: 2025-06-15
-summary: Open-source Ansible collection providing 20+ modules for automating z/OS system administration, job submission, dataset management, and USS operations.
+title: ClinicNet
+date: 2024-01-01
+summary: "Multi-tenant B2B SaaS for dental clinics. Django + Next.js, Stripe billing, WhatsApp Business API integration. Serving 120+ paying customers in Mexico."
 tags:
-  - Ansible
-  - Automation
-  - IBM Z
-  - Open Source
+  - Django
+  - Next.js
+  - Stripe
+  - WhatsApp API
+  - SaaS
 links:
-  - type: github
-    url: https://github.com/seulsale/ansible-z-collection
-    label: Code
   - type: live
-    url: https://galaxy.ansible.com/seulsale/zos
-    label: Ansible Galaxy
+    url: https://clinicnet.app
+    label: Live
 featured: true
 ---
 
-An open-source Ansible collection that provides 20+ modules for automating z/OS system administration tasks. Supports job submission, dataset management, USS file operations, and RACF security configuration.
+Multi-tenant B2B SaaS platform serving 120+ paying dental clinics across Mexico. Built as a solo founder handling architecture, development, deployment, and customer support.
 
-## Key Features
+## Architecture
 
-- **Job Management** - Submit JCL, monitor job status, and retrieve output programmatically
-- **Dataset Operations** - Create, copy, delete, and manage MVS datasets with idempotent modules
-- **USS Integration** - Full support for Unix System Services file and process management
-- **RACF Automation** - Manage users, groups, and permissions through Ansible playbooks
+- **Backend** - Django with django-tenants for multi-tenancy, PostgreSQL with schema-per-tenant isolation
+- **Frontend** - Next.js with responsive design for desktop and mobile use in clinics
+- **Billing** - Stripe subscription billing with automated invoicing and plan management
+- **Notifications** - WhatsApp Business API integration for automated appointment reminders
 
-Built with Python and tested against z/OS 2.4+ environments. Used in production by several enterprise teams for automated provisioning and compliance enforcement.
+## Key Metrics
+
+- 120+ active paying clinics
+- Profitable and growing
+- Solo-developed from zero to production

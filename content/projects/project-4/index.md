@@ -1,23 +1,21 @@
 ---
-title: zOS Log Analyzer
-date: 2024-11-20
-summary: Python CLI tool that parses z/OS syslog and job output, detects anomalies with pattern matching, and sends alerts to Slack or PagerDuty.
+title: Personal Portfolio Site
+date: 2026-02-10
+summary: "This portfolio site built with Hugo and HugoBlox, deployed on GitHub Pages with automated CI/CD."
 tags:
-  - Python
-  - IBM Z
-  - Monitoring
+  - Hugo
+  - Web
+  - CI/CD
 links:
   - type: github
-    url: https://github.com/seulsale/zos-log-analyzer
+    url: https://github.com/seulsale/seulsale.github.io
     label: Code
+  - type: live
+    url: https://seulsale.com
+    label: Live
 featured: true
 ---
 
-A Python CLI tool for parsing and analyzing z/OS system logs. Supports syslog, JES2 job output, and SMF records. Uses configurable pattern matching and threshold-based alerting to detect anomalies in mainframe environments.
+Personal portfolio and project showcase built with Hugo and the HugoBlox theme framework. Features a responsive dark-mode design, project cards, experience timeline, and homelab services directory.
 
-## Features
-
-- **Multi-format parsing** - Handles syslog, JESMSGLG, JESJCL, and SMF record formats
-- **Pattern rules** - YAML-based rule definitions for custom alert conditions
-- **Integrations** - Sends notifications to Slack, PagerDuty, or email
-- **Dashboard export** - Generates Grafana-compatible JSON for visualization
+Deployed automatically to GitHub Pages via a two-stage GitHub Actions workflow (build + deploy) with Hugo Extended and TailwindCSS processing.

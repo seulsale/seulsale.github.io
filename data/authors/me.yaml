@@ -7,22 +7,28 @@ name:
   family: Saucedo
 postnominals: []
 status:
-  icon: "💻"
-role: Software Developer at IBM
-email: "sergio@example.com"
+  icon: "🚀"
+role: Software Engineer
+email: "contact@seulsale.com"
 bio: |
-  Contributing to the Ansible for IBM Z ecosystem. With over five years of experience
-  in systems automation and infrastructure engineering, I specialize in bridging
-  legacy mainframe environments with modern DevOps practices. When I'm not writing
-  playbooks, I'm tinkering with my homelab or contributing to open source projects.
+  Software Engineer currently contracting for enterprise clients in the
+  automotive sector, leading legacy-to-modern platform migrations
+  with Python, React, Azure, and Kubernetes. Also the founder of ClinicNet, a
+  B2B SaaS serving 120+ dental clinics in Mexico. Previously at IBM,
+  contributing to the Ansible for IBM Z ecosystem and delivering automation
+  workshops to enterprise clients. I like building things that solve real
+  problems — whether that's a manufacturing system or a WhatsApp appointment
+  reminder.
 
 affiliations:
-  - name: IBM
-    url: https://www.ibm.com
+  - name: Enterprise Industrial Clients
+    url: ""
+  - name: ClinicNet
+    url: https://clinicnet.app
 
 links:
   - icon: at-symbol
-    url: mailto:sergio@example.com
+    url: mailto:contact@seulsale.com
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/seulsale
@@ -30,71 +36,81 @@ links:
     url: https://www.linkedin.com/in/seulsale/
 
 interests:
-  - Ansible Automation
-  - IBM Z & Mainframes
+  - Automation
   - Open Source
-  - Homelab & Self-Hosting
-  - Linux Systems
+  - SaaS
+  - Homelab
+  - Linux
+  - IoT
 
 education:
-  - degree: B.S. Computer Science
-    institution: University of Texas at Austin
-    start: 2016-09-01
-    end: 2020-05-31
-    summary: |
-      Focus on systems programming and distributed computing.
-      Senior capstone on automated mainframe provisioning.
+  - degree: Computer Systems Engineering
+    institution: Instituto Tecnológico de Saltillo
+    end: 2021-01-01
+    summary: ""
 
 experience:
-  - role: Software Developer
+  - role: Software Engineer (Contractor)
+    org: Enterprise Industrial Clients
+    start: 2026-01-06
+    summary: |
+      Contracting for major automotive companies on platform modernization initiatives.
+      Leading legacy-to-modern migrations using Python, React, and Azure (Entra ID, Azure DevOps).
+      Building IoT-integrated systems, data pipelines, and internal tooling with Python and Kubernetes.
+  - role: Founder & Full Stack Developer
+    org: ClinicNet
+    start: 2024-01-01
+    summary: |
+      Built and launched a profitable multi-tenant B2B SaaS serving 120+ paying
+      dental clinics. Architected with Django + django-tenants, Next.js frontend,
+      and Stripe subscription billing. Integrated WhatsApp Business API for
+      automated appointment reminders.
+  - role: Advisory Software Engineer
     org: IBM
-    start: 2022-03-01
+    start: 2022-02-01
+    end: 2025-11-30
     summary: |
-      Contributing to the Ansible for IBM Z ecosystem, building collections
-      and modules that automate z/OS operations. Collaborating with cross-functional
-      teams to modernize mainframe workflows through infrastructure as code.
-      Mentoring junior developers on Ansible best practices.
-  - role: Systems Engineer
-    org: Acme Cloud Solutions
-    start: 2020-06-01
-    end: 2022-02-28
-    summary: |
-      Designed and maintained CI/CD pipelines for hybrid cloud deployments.
-      Automated infrastructure provisioning using Terraform and Ansible.
-      Reduced deployment time by 60% through pipeline optimization.
-  - role: DevOps Intern
-    org: Lorem Tech Inc.
-    start: 2019-06-01
-    end: 2019-08-31
-    summary: |
-      Built monitoring dashboards with Grafana and Prometheus.
-      Wrote Python scripts to automate log analysis and alerting.
+      Contributed to the Ansible for IBM Z ecosystem, building automation for
+      mainframe environments. Led DevSecOps migration initiatives across 7+
+      enterprise teams. Delivered technical workshops and demos to Fortune 500 clients.
 
 skills:
-  - name: Automation
-    items:
-      - label: Ansible
-        level: 5
-      - label: CI/CD
-        level: 4
-      - label: Terraform
-        level: 3
-  - name: Development
+  - name: Languages
     items:
       - label: Python
         level: 5
-      - label: Go
-        level: 3
+      - label: JavaScript
+        level: 4
+      - label: TypeScript
+        level: 4
       - label: Bash
         level: 5
-  - name: Infrastructure
+  - name: Backend
     items:
-      - label: Docker
+      - label: Django
+        level: 5
+      - label: FastAPI
         level: 4
-      - label: Linux
+      - label: Node.js
+        level: 3
+  - name: Frontend
+    items:
+      - label: React
+        level: 4
+      - label: Next.js
+        level: 4
+  - name: Cloud & Infrastructure
+    items:
+      - label: Azure
+        level: 4
+      - label: AWS
+        level: 3
+      - label: Docker
         level: 5
       - label: Kubernetes
         level: 3
+      - label: VMware ESXi
+        level: 4
 
 languages: []
 awards: []
