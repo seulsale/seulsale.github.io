@@ -119,7 +119,7 @@ sections:
       title: Experience
       date_format: Jan 2006
       items:
-        - title: Senior Software Engineer (Contractor)
+        - title: Senior Software Engineer
           company: Enterprise Industrial Clients
           company_url: ''
           company_logo: ''
@@ -128,7 +128,7 @@ sections:
           date_end: ''
           description: |2-
             * Leading a full legacy-to-modern migration of a lab test execution platform for a global automotive safety manufacturer
-            * Designing a server-edge architecture with FastAPI, Celery, React/TypeScript, and Kubernetes (Tanzu)
+            * Designing a server-edge architecture with FastAPI, Celery, React/TypeScript, and Kubernetes
             * Building edge workers that communicate with data acquisition hardware via RS232 and TCP/IP sockets
             * Implementing Entra ID auth with RBAC, OpenTelemetry observability, and CI/CD with signed artifacts
             * Collaborating with hardware engineers and manufacturing stakeholders to define migration priorities
@@ -256,13 +256,11 @@ sections:
             </div>
           </div>
           <a href="https://hassistant.seulsale.com" target="_blank" rel="noopener" class="service-card">
-          <div class="service-card">
             <div class="service-icon">&#127968;</div>
             <div class="service-info">
               <h4>Home Assistant</h4>
               <p>Home automation</p>
             </div>
-          </div>
           </a>
           <a href="https://ollama.seulsale.com" target="_blank" rel="noopener" class="service-card">
             <div class="service-icon">&#129504;</div>

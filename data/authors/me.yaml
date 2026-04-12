@@ -37,6 +37,7 @@ links:
 
 interests:
   - Automation
+  - AI
   - Open Source
   - SaaS
   - Homelab
@@ -50,14 +51,14 @@ education:
     summary: ""
 
 experience:
-  - role: Software Engineer (Contractor)
+  - role: Senior Software Engineer
     org: Enterprise Industrial Clients
     start: 2026-01-06
     summary: |
       Leading a full legacy-to-modern migration of a lab test execution platform for a global automotive safety manufacturer.
-      Designing a server-edge architecture with FastAPI, Celery, React/TypeScript, and Kubernetes (Tanzu).
+      Designing a server-edge architecture with FastAPI, Celery, React/TypeScript, and Kubernetes.
       Building edge workers that communicate with data acquisition hardware via RS232 and TCP/IP sockets.
-  - role: Founder & Full Stack Developer
+  - role: Co-founder & Solo Developer
     org: ClinicNet
     start: 2024-01-01
     summary: |
@@ -65,7 +66,7 @@ experience:
       dental clinics. Architected with Django + django-tenants, Next.js frontend,
       and Stripe subscription billing. Integrated WhatsApp Business API for
       automated appointment reminders.
-  - role: Advisory Software Engineer
+  - role: Staff Software Engineer
     org: IBM
     start: 2022-02-01
     end: 2025-11-30
@@ -73,7 +74,7 @@ experience:
       Contributed to the Ansible for IBM Z ecosystem, building automation for
       mainframe environments. Led DevSecOps migration initiatives across 7+
       enterprise teams. Delivered technical workshops and demos to Fortune 500 clients.
-  - role: Software Engineer
+  - role: Python Developer
     org: Softtek
     start: 2021-03-01
     end: 2022-01-31

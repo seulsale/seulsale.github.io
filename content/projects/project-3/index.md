@@ -9,9 +9,9 @@ tags:
   - Ollama
   - Hybrid Cloud
 links:
-  - type: github
-    url: https://github.com/seulsale
-    label: Code
+  - type: live
+    url: https://esxi.seulsale.com
+    label: Live
   - type: live
     url: https://ollama.seulsale.com
     label: Live

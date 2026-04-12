@@ -7,9 +7,9 @@ tags:
   - React
   - Python
 links:
-  - type: github
-    url: https://github.com/seulsale
-    label: Code
+  - type: live
+    url: https://qan.tp
+    label: Live
 featured: true
 ---
 
