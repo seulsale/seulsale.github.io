@@ -8,8 +8,8 @@ tags:
   - Python
 links:
   - type: live
-    url: https://qan.tp
-    label: Live
+    url: https://qan.to
+    label: Visit
 featured: true
 ---
 

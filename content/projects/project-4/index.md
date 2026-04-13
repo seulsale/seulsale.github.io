@@ -10,9 +10,6 @@ links:
   - type: github
     url: https://github.com/seulsale/seulsale.github.io
     label: Code
-  - type: live
-    url: https://seulsale.com
-    label: Live
 featured: true
 ---
 

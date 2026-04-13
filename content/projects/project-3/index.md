@@ -11,10 +11,10 @@ tags:
 links:
   - type: live
     url: https://esxi.seulsale.com
-    label: Live
+    label: ESXI
   - type: live
     url: https://ollama.seulsale.com
-    label: Live
+    label: Ollama
 featured: true
 ---
 

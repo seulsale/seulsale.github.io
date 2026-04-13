@@ -11,7 +11,7 @@ tags:
 links:
   - type: live
     url: https://clinicnet.app
-    label: Live
+    label: Visit
 featured: true
 ---
 
