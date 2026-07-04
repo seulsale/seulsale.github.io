@@ -86,7 +86,7 @@ sections:
               icon: devicon/docker
             - name: Kubernetes
               icon: devicon/kubernetes
-            - name: VMware ESXi
+            - name: Proxmox VE
               icon: hero/server-stack
         - name: Automation & DevOps
           items:
@@ -237,7 +237,7 @@ sections:
           <div class="service-card">
             <div class="service-icon">&#9881;</div>
             <div class="service-info">
-              <h4>VMware ESXi</h4>
+              <h4>Proxmox VE</h4>
               <p>Bare-metal hypervisor</p>
             </div>
           </div>
@@ -245,7 +245,35 @@ sections:
             <div class="service-icon">&#128230;</div>
             <div class="service-info">
               <h4>Docker</h4>
-              <p>Container orchestration</p>
+              <p>Container runtime across all VMs</p>
+            </div>
+          </div>
+          <a href="https://grafana.seulsale.com" target="_blank" rel="noopener" class="service-card">
+            <div class="service-icon">&#128202;</div>
+            <div class="service-info">
+              <h4>Grafana + Prometheus</h4>
+              <p>Metrics, logs (Loki) and alerting</p>
+            </div>
+          </a>
+          <a href="https://monitor.seulsale.com" target="_blank" rel="noopener" class="service-card">
+            <div class="service-icon">&#128200;</div>
+            <div class="service-info">
+              <h4>Beszel</h4>
+              <p>Lightweight fleet monitoring</p>
+            </div>
+          </a>
+          <div class="service-card">
+            <div class="service-icon">&#128737;</div>
+            <div class="service-info">
+              <h4>Pi-hole</h4>
+              <p>Network-wide DNS ad blocking</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">&#127760;</div>
+            <div class="service-info">
+              <h4>Cloudflare Tunnel</h4>
+              <p>Zero-trust ingress, no open ports</p>
             </div>
           </div>
           <div class="service-card">
@@ -255,20 +283,27 @@ sections:
               <p>Mesh VPN</p>
             </div>
           </div>
-          <a href="https://hassistant.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#127968;</div>
+          <div class="service-card">
+            <div class="service-icon">&#128196;</div>
             <div class="service-info">
-              <h4>Home Assistant</h4>
-              <p>Home automation</p>
+              <h4>Caddy</h4>
+              <p>Static site hosting</p>
             </div>
-          </a>
-          <a href="https://ollama.seulsale.com" target="_blank" rel="noopener" class="service-card">
-            <div class="service-icon">&#129504;</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">&#128221;</div>
             <div class="service-info">
-              <h4>Ollama</h4>
-              <p>Self-hosted LLM inference</p>
+              <h4>CouchDB</h4>
+              <p>Obsidian LiveSync backend</p>
             </div>
-          </a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">&#9935;</div>
+            <div class="service-info">
+              <h4>Minecraft Bedrock</h4>
+              <p>Self-hosted game server</p>
+            </div>
+          </div>
           <div class="service-card">
             <div class="service-icon">&#9729;</div>
             <div class="service-info">

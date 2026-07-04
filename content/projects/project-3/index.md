@@ -1,29 +1,32 @@
 ---
 title: Hybrid Cloud Homelab
 date: 2025-04-01
-summary: "Self-hosted infrastructure running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts LLM inference (Ollama), containerized services, and automated deployments across a VMware ESXi + Docker + ECS stack."
+summary: "Self-hosted infrastructure on Proxmox VE running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts a full observability stack (Grafana, Prometheus, Loki), containerized services, and automated deployments — all published through Cloudflare Tunnel with zero open ports."
 tags:
+  - Homelab
+  - Proxmox
   - AWS ECS
-  - VMware ESXi
   - Docker
-  - Ollama
   - Hybrid Cloud
 links:
   - type: live
-    url: https://esxi.seulsale.com
-    label: ESXI
+    url: https://grafana.seulsale.com
+    label: Grafana
   - type: live
-    url: https://ollama.seulsale.com
-    label: Ollama
+    url: https://monitor.seulsale.com
+    label: Beszel
 featured: true
 ---
 
-Self-hosted infrastructure running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts LLM inference (Ollama), containerized services, and automated deployments across a VMware ESXi + Docker + ECS stack.
+Self-hosted infrastructure on Proxmox VE running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts a full observability stack, containerized services, and automated deployments — all published through Cloudflare Tunnel with zero open ports.
 
 ## Stack
 
-- **VMware ESXi** - Bare-metal hypervisor for VM management
-- **AWS ECS Anywhere** - Hybrid cloud container orchestration across local and cloud resources
+- **Proxmox VE** - Bare-metal hypervisor managing dedicated VMs for services, ingress, and monitoring
+- **AWS ECS Anywhere** - Hybrid cloud container orchestration running production SaaS workloads on local hardware
 - **Docker** - Container runtime for all self-hosted services
-- **Ollama** - Self-hosted LLM inference engine
-- **Tailscale** - Mesh VPN for secure remote access
+- **Grafana + Prometheus + Loki** - Metrics, logs, and alerting across the whole fleet, plus Beszel for lightweight per-host monitoring
+- **Pi-hole** - Network-wide DNS ad blocking
+- **Caddy** - Static site hosting behind Cloudflare Tunnel
+- **Cloudflare Tunnel + Tailscale** - Zero-trust ingress and mesh VPN for secure remote access, with no ports exposed to the internet
+- **Ansible** - Configuration management and automated deployments

@@ -126,7 +126,7 @@ skills:
         level: 5
       - label: Kubernetes
         level: 3
-      - label: VMware ESXi
+      - label: Proxmox VE
         level: 4
 
 languages: []
