@@ -31,6 +31,9 @@ sections:
         - text: View My Work
           url: "#projects"
           icon: arrow-down
+        - text: Download CV
+          url: "uploads/sergio-saucedo-cv.pdf"
+          icon: document-arrow-down
         - text: Get In Touch
           url: "#contact"
           icon: envelope
@@ -44,6 +47,36 @@ sections:
           dark: "#0a0a0f"
       spacing:
         padding: ["6rem", "0", "4rem", "0"]
+
+  # Quick Stats
+  - block: stats
+    id: stats
+    content:
+      items:
+        - statistic: "120+"
+          description: Paying clinics on my SaaS
+          sub_metric: ClinicNet, solo-built and profitable
+          icon: hero/building-office-2
+        - statistic: "6+"
+          description: Years shipping production software
+          sub_metric: Startups, IBM, and enterprise clients
+          icon: hero/code-bracket
+        - statistic: "7+"
+          description: Enterprise teams led through DevSecOps migrations
+          sub_metric: At IBM, across mainframe ecosystems
+          icon: hero/users
+        - statistic: "10+"
+          description: Self-hosted services on my homelab
+          sub_metric: Proxmox, ECS Anywhere, full observability
+          icon: hero/server-stack
+    design:
+      layout: compact
+      background:
+        color:
+          light: "#ffffff"
+          dark: "#0a0a0f"
+      spacing:
+        padding: ["0", "0", "3rem", "0"]
 
   # Tech Stack
   - block: tech-stack
@@ -76,6 +109,20 @@ sections:
               icon: devicon/react
             - name: Next.js
               icon: devicon/nextjs
+        - name: AI & LLM
+          items:
+            - name: LangGraph
+              icon: hero/rectangle-group
+            - name: LangChain
+              icon: hero/sparkles
+            - name: Databricks
+              icon: hero/circle-stack
+            - name: MCP
+              icon: hero/puzzle-piece
+            - name: Ollama
+              icon: hero/cpu-chip
+            - name: LLM Evals
+              icon: hero/beaker
         - name: Cloud & Infrastructure
           items:
             - name: Azure
@@ -197,6 +244,46 @@ sections:
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 
+  # Certifications
+  - block: markdown
+    id: certifications
+    content:
+      title: "Certifications"
+      subtitle: ""
+      text: |-
+        <div class="certs-grid">
+          <a href="https://www.credly.com/badges/16fc59a5-4adf-434d-a5d6-5dd8f1de2057" target="_blank" rel="noopener" class="cert-card">
+            <img src="/media/certs/aws-ccp.png" alt="AWS Certified Cloud Practitioner badge" loading="lazy">
+            <div>
+              <h4>AWS Certified Cloud Practitioner</h4>
+              <p>Amazon Web Services &middot; 2026</p>
+            </div>
+          </a>
+          <a href="https://www.credly.com/badges/9c050fbb-d18a-46ec-92d8-64a4d28370ef" target="_blank" rel="noopener" class="cert-card">
+            <img src="/media/certs/ibm-dev-cloud.png" alt="IBM Certified Professional Developer - Cloud v6 badge" loading="lazy">
+            <div>
+              <h4>IBM Certified Professional Developer &ndash; Cloud v6</h4>
+              <p>IBM Professional Certification &middot; 2025</p>
+            </div>
+          </a>
+          <a href="https://www.credly.com/badges/0349aea1-38cd-470b-bc72-ed6ad03bb363" target="_blank" rel="noopener" class="cert-card">
+            <img src="/media/certs/ibm-sre-cloud.png" alt="IBM Certified Associate SRE - Cloud v1 badge" loading="lazy">
+            <div>
+              <h4>IBM Certified Associate SRE &ndash; Cloud v1</h4>
+              <p>IBM Professional Certification &middot; 2022</p>
+            </div>
+          </a>
+        </div>
+        <p class="certs-more"><a href="https://www.credly.com/users/seulsale" target="_blank" rel="noopener">View all 18 badges on Credly &rarr;</a></p>
+    design:
+      columns: '1'
+      background:
+        color:
+          light: "#ffffff"
+          dark: "#0d0d12"
+      spacing:
+        padding: ["4rem", "0", "4rem", "0"]
+
   # Projects
   - block: portfolio
     id: projects
@@ -233,6 +320,9 @@ sections:
       title: "Homelab Services"
       subtitle: "Self-hosted infrastructure managed with Docker and Ansible"
       text: |-
+        <div class="arch-diagram">
+          <img src="/media/homelab-architecture.svg" alt="Homelab architecture: Cloudflare Tunnel ingress into a Proxmox host running services, monitoring, gateway, and ECS Anywhere VMs, with an on-demand GPU node controlled via iDRAC" loading="lazy">
+        </div>
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">&#9881;</div>
@@ -311,6 +401,13 @@ sections:
               <p>Hybrid cloud container orchestration</p>
             </div>
           </div>
+          <a href="https://ollama.seulsale.com" target="_blank" rel="noopener" class="service-card">
+            <div class="service-icon">&#129504;</div>
+            <div class="service-info">
+              <h4>Ollama</h4>
+              <p>LLM inference on an on-demand GPU node</p>
+            </div>
+          </a>
         </div>
     design:
       columns: '1'
@@ -318,6 +415,26 @@ sections:
         color:
           light: "#ffffff"
           dark: "#0d0d12"
+      spacing:
+        padding: ["4rem", "0", "4rem", "0"]
+
+  # Latest Posts
+  - block: collection
+    id: blog
+    content:
+      title: "Latest Posts"
+      subtitle: "Notes on SaaS, automation, and homelab infrastructure"
+      count: 3
+      filters:
+        folders:
+          - post
+    design:
+      view: card
+      columns: 3
+      background:
+        color:
+          light: "#f0f4f3"
+          dark: "#08080c"
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 

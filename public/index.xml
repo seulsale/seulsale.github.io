@@ -1,80 +1,101 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sergio Saucedo</title>
-    <link>http://localhost:1313/</link>
-      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <description>Sergio Saucedo</description>
-    <generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>http://localhost:1313/media/icon.svg</url>
-      <title>Sergio Saucedo</title>
-      <link>http://localhost:1313/</link>
-    </image>
-    
-    <item>
-      <title>Personal Portfolio Site</title>
-      <link>http://localhost:1313/projects/project-4/</link>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-4/</guid>
-      <description>&lt;p&gt;Personal portfolio and project showcase built with Hugo and the HugoBlox theme framework. Features a responsive dark-mode design, project cards, experience timeline, and homelab services directory.&lt;/p&gt;
-&lt;p&gt;Deployed automatically to GitHub Pages via a two-stage GitHub Actions workflow (build + deploy) with Hugo Extended and TailwindCSS processing.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Qanto</title>
-      <link>http://localhost:1313/projects/project-2/</link>
-      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-2/</guid>
-      <description>&lt;p&gt;Personal finance management application designed for simplicity and fast iteration. Built with a FastAPI backend and a Vite/React frontend.&lt;/p&gt;
-&lt;h2 id=&#34;tech-stack&#34;&gt;Tech Stack&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sergio Saucedo</title><link>https://seulsale.com/</link><atom:link href="https://seulsale.com/index.xml" rel="self" type="application/rss+xml"/><description>Sergio Saucedo</description><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate><image><url>https://seulsale.com/media/sharing.png</url><title>Sergio Saucedo</title><link>https://seulsale.com/</link></image><item><title>Powering a GPU Node On-Demand with iDRAC and Redfish</title><link>https://seulsale.com/post/on-demand-gpu-node-idrac-redfish/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate><guid>https://seulsale.com/post/on-demand-gpu-node-idrac-redfish/</guid><description>&lt;p&gt;There&amp;rsquo;s a Dell PowerEdge R630 in my homelab whose only job is GPU work — mainly &lt;a href="https://ollama.com" target="_blank" rel="noopener"&gt;Ollama&lt;/a&gt; for self-hosted LLM inference. Rack servers are power-hungry, and paying to idle one 24/7 for something I use a few hours a week is absurd. So the machine stays &lt;strong&gt;off by default&lt;/strong&gt; and boots on demand.&lt;/p&gt;
+&lt;h2 id="redfish-the-api-your-server-already-has"&gt;Redfish: the API your server already has&lt;/h2&gt;
+&lt;p&gt;Every server with a BMC (iDRAC on Dell, iLO on HP) exposes the &lt;a href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"&gt;Redfish API&lt;/a&gt; — a REST interface to the hardware itself. The BMC draws a couple of watts and is always reachable, even when the host is powered off. Power control is a single POST:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -sk -K ~/.bmc-creds &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -H &lt;span class="s1"&gt;&amp;#39;Content-Type: application/json&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -X POST &lt;span class="s2"&gt;&amp;#34;https://&lt;/span&gt;&lt;span class="nv"&gt;$BMC&lt;/span&gt;&lt;span class="s2"&gt;/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -d &lt;span class="s1"&gt;&amp;#39;{&amp;#34;ResetType&amp;#34;: &amp;#34;On&amp;#34;}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Two details worth stealing:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Keep credentials out of &lt;code&gt;argv&lt;/code&gt;.&lt;/strong&gt; Curl&amp;rsquo;s &lt;code&gt;-K&lt;/code&gt; flag reads options from a file, so the BMC password never shows up in &lt;code&gt;ps&lt;/code&gt; or shell history. The creds file is &lt;code&gt;chmod 600&lt;/code&gt;, owned by root.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;GracefulShutdown&lt;/code&gt; first, &lt;code&gt;ForceOff&lt;/code&gt; as the escape hatch.&lt;/strong&gt; Redfish supports both; the graceful path lets the OS unmount cleanly.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I wrapped this in a ~40-line script (&lt;code&gt;esxi up | down | status&lt;/code&gt;) that also queries &lt;code&gt;PowerState&lt;/code&gt;, so any machine on my VPN can check or change the server&amp;rsquo;s state in one command.&lt;/p&gt;
+&lt;h2 id="making-it-a-button"&gt;Making it a button&lt;/h2&gt;
+&lt;p&gt;CLI is fine at a desk, but the whole point is &amp;ldquo;I want to ask a model something &lt;em&gt;now&lt;/em&gt;.&amp;rdquo; So the script is wired into a small dashboard on my hypervisor — one page showing every service&amp;rsquo;s health, with &lt;strong&gt;Power on / Shut down&lt;/strong&gt; buttons for the GPU node. Boot to Ollama-ready takes about four minutes; the dashboard&amp;rsquo;s status dot flips green when the tunnel to it comes back up.&lt;/p&gt;
+&lt;p&gt;The pattern generalizes to anything with a BMC:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;State&lt;/strong&gt; lives in the BMC, not the OS — you can always trust it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Actions&lt;/strong&gt; are idempotent Redfish POSTs — safe to put behind a button.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Health&lt;/strong&gt; is best checked end-to-end — I probe the actual Ollama endpoint, not just a ping.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="the-economics"&gt;The economics&lt;/h2&gt;
+&lt;p&gt;An R630 idles around 90–120 W. At my rates, leaving it on costs roughly $10–15/month to do nothing; on-demand it&amp;rsquo;s pennies. The four-minute boot is a fair trade for inference that runs on my hardware, on my network, with no tokens metered by anyone.&lt;/p&gt;</description></item><item><title>Running AWS ECS Anywhere on a Proxmox Homelab</title><link>https://seulsale.com/post/ecs-anywhere-on-proxmox/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate><guid>https://seulsale.com/post/ecs-anywhere-on-proxmox/</guid><description>&lt;p&gt;My side projects need real infrastructure — APIs, scheduled scrapers, background workers — but paying for EC2 to run workloads that fit comfortably on hardware I already own never sat right with me. ECS Anywhere is the compromise I settled on: AWS owns the control plane, my Proxmox server owns the compute.&lt;/p&gt;
+&lt;h2 id="the-setup"&gt;The setup&lt;/h2&gt;
+&lt;p&gt;The homelab runs Proxmox VE on a 12-core, 32 GB machine. One VM is dedicated to ECS: it runs the &lt;code&gt;amazon-ecs-agent&lt;/code&gt; registered as an &lt;em&gt;external instance&lt;/em&gt; in a regular ECS cluster. From the AWS console it looks like any other container instance — task definitions, services, deployments, CloudWatch — but the tasks execute at home.&lt;/p&gt;
+&lt;p&gt;Registration is a one-time SSM activation:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;aws ssm create-activation --iam-role ecsAnywhereRole
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl -o ecs-anywhere-install.sh https://amazon-ecs-agent.s3.amazonaws.com/ecs-anywhere-install-latest.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo bash ecs-anywhere-install.sh &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --cluster homelab &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --activation-id &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$ACTIVATION_ID&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --activation-code &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;$ACTIVATION_CODE&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --region us-east-1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After that, deploying to my house is identical to deploying to Fargate: push an image to ECR, update the task definition, and the agent pulls and swaps containers. My CI pipeline doesn&amp;rsquo;t know or care that the target is a VM under my desk.&lt;/p&gt;
+&lt;h2 id="what-runs-on-it"&gt;What runs on it&lt;/h2&gt;
+&lt;p&gt;Right now the external instance runs the production API and scraper for &lt;a href="https://qan.to" target="_blank" rel="noopener"&gt;Qanto&lt;/a&gt;, my personal finance app. The scraper is exactly the kind of workload this shines for: long-running, bursty, and completely indifferent to latency — but expensive to keep on a cloud instance 24/7.&lt;/p&gt;
+&lt;h2 id="the-honest-trade-offs"&gt;The honest trade-offs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;You are the datacenter.&lt;/strong&gt; Power outage, ISP hiccup, dead disk — that&amp;rsquo;s your pager. I mitigate with Proxmox snapshots and a monitoring VM (Prometheus + Grafana + Loki) that alerts me before users notice.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ECS Anywhere still costs money&lt;/strong&gt; — about $0.01/hour per registered instance. For one instance that's ~$7/month, far below the EC2 equivalent for the same cores and RAM.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;No ALB integration on-prem.&lt;/strong&gt; Ingress is my own problem; I solve it with Cloudflare Tunnel, which also means zero open ports on my router.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="why-not-just-docker-compose"&gt;Why not just Docker Compose?&lt;/h2&gt;
+&lt;p&gt;I ran plain Compose for years. What ECS Anywhere buys me is the deployment story: immutable task definitions, rollbacks, the same &lt;code&gt;aws ecs update-service&lt;/code&gt; muscle memory I use professionally, and one console showing every environment. The homelab stopped being a snowflake and became just another cluster.&lt;/p&gt;</description></item><item><title>Zero Open Ports: Publishing Homelab Services with Cloudflare Tunnel</title><link>https://seulsale.com/post/zero-open-ports-cloudflare-tunnel/</link><pubDate>Sat, 04 Jul 2026 00:00:00 +0000</pubDate><guid>https://seulsale.com/post/zero-open-ports-cloudflare-tunnel/</guid><description>&lt;p&gt;Port forwarding is how homelabs get owned. Every forwarded port is a doorbell on the public internet, ringing straight into your house, answered by whatever software you last remembered to patch. My rule for the homelab is simple: &lt;strong&gt;zero open inbound ports&lt;/strong&gt;, ever.&lt;/p&gt;
+&lt;h2 id="how-the-traffic-flows"&gt;How the traffic flows&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" target="_blank" rel="noopener"&gt;Cloudflare Tunnel&lt;/a&gt; inverts the connection. A lightweight daemon (&lt;code&gt;cloudflared&lt;/code&gt;) runs inside the network and dials &lt;em&gt;out&lt;/em&gt; to Cloudflare&amp;rsquo;s edge. Public hostnames — &lt;code&gt;grafana.example.com&lt;/code&gt;, &lt;code&gt;monitor.example.com&lt;/code&gt; — are DNS records pointing at the tunnel, and Cloudflare routes each one to an internal address the daemon can reach:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;ingress&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;hostname&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;grafana.example.com&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;service&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;http://monitoring-vm:3000&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;hostname&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;sites.example.com&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;service&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;http://caddy:80&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;service: http_status:404 # explicit default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;drop everything else&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The router does nothing. There is nothing to scan. From outside, my house looks like a device that never answers.&lt;/p&gt;
+&lt;h2 id="the-layers-in-order"&gt;The layers, in order&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare edge&lt;/strong&gt; — TLS termination, DDoS absorption, and the only surface an attacker can see.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The tunnel&lt;/strong&gt; — outbound-only; a connector VM runs &lt;code&gt;cloudflared&lt;/code&gt; as a systemd service, and a second connector runs in Docker for a separate domain serving static sites through Caddy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The service&amp;rsquo;s own auth&lt;/strong&gt; — everything published still has a login (Grafana, Beszel, the Proxmox UI). A tunnel hides the network, not a weak password.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Everything else stays private&lt;/strong&gt; — admin surfaces I don&amp;rsquo;t need public (the control dashboard, SSH to most machines) live only on Tailscale, the overlay VPN layered across every node.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For the services that should be &lt;em&gt;really&lt;/em&gt; private — SSH in particular — Cloudflare Access sits in front of the tunnel hostname, requiring an identity check before the connection ever reaches my network.&lt;/p&gt;
+&lt;h2 id="lessons-learned"&gt;Lessons learned&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;End the ingress list with an explicit 404.&lt;/strong&gt; The default catch-all is the difference between &amp;ldquo;I exposed three services&amp;rdquo; and &amp;ldquo;I exposed whatever happened to respond.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One tunnel per trust domain.&lt;/strong&gt; My personal-brand services and my throwaway static sites run on separate tunnels with separate credentials; a leaked token compromises one, not both.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Auth-gated is not the same as private.&lt;/strong&gt; A public login page is still public. If you wouldn&amp;rsquo;t want the URL in a search index, put it behind Access or keep it VPN-only.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor from inside.&lt;/strong&gt; Blackbox-exporter probes both the internal address and the public hostname, so I can tell &amp;ldquo;service is down&amp;rdquo; apart from &amp;ldquo;tunnel is down&amp;rdquo; at a glance in Grafana.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The result: friends reach the Minecraft server, recruiters reach my dashboards, and my router&amp;rsquo;s port-forwarding table has been empty for a year.&lt;/p&gt;</description></item><item><title>Personal Portfolio Site</title><link>https://seulsale.com/projects/project-4/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-4/</guid><description>&lt;p&gt;Personal portfolio and project showcase built with Hugo and the HugoBlox theme framework. Features a responsive dark-mode design, project cards, experience timeline, and homelab services directory.&lt;/p&gt;
+&lt;p&gt;Deployed automatically to GitHub Pages via a two-stage GitHub Actions workflow (build + deploy) with Hugo Extended and TailwindCSS processing.&lt;/p&gt;</description></item><item><title>Qanto</title><link>https://seulsale.com/projects/project-2/</link><pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-2/</guid><description>&lt;p&gt;Personal finance management application designed for simplicity and fast iteration. Built with a FastAPI backend and a Vite/React frontend.&lt;/p&gt;
+&lt;h2 id="tech-stack"&gt;Tech Stack&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Backend&lt;/strong&gt; - FastAPI with Python for a lightweight, high-performance API&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt; - React with Vite for fast development and hot module replacement&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Design&lt;/strong&gt; - Focused on clean UX and practical daily use&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hybrid Cloud Homelab</title>
-      <link>http://localhost:1313/projects/project-3/</link>
-      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-3/</guid>
-      <description>&lt;p&gt;Self-hosted infrastructure running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts LLM inference (Ollama), containerized services, and automated deployments across a VMware ESXi + Docker + ECS stack.&lt;/p&gt;
-&lt;h2 id=&#34;stack&#34;&gt;Stack&lt;/h2&gt;
+&lt;/ul&gt;</description></item><item><title>Hybrid Cloud Homelab</title><link>https://seulsale.com/projects/project-3/</link><pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-3/</guid><description>&lt;p&gt;Self-hosted infrastructure on Proxmox VE running AWS ECS Anywhere clusters on local hardware, blending cloud-native orchestration with on-prem servers. Hosts a full observability stack, containerized services, and automated deployments — all published through Cloudflare Tunnel with zero open ports.&lt;/p&gt;
+&lt;h2 id="stack"&gt;Stack&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;VMware ESXi&lt;/strong&gt; - Bare-metal hypervisor for VM management&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AWS ECS Anywhere&lt;/strong&gt; - Hybrid cloud container orchestration across local and cloud resources&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Proxmox VE&lt;/strong&gt; - Bare-metal hypervisor managing dedicated VMs for services, ingress, and monitoring&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWS ECS Anywhere&lt;/strong&gt; - Hybrid cloud container orchestration running production SaaS workloads on local hardware&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt; - Container runtime for all self-hosted services&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Ollama&lt;/strong&gt; - Self-hosted LLM inference engine&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tailscale&lt;/strong&gt; - Mesh VPN for secure remote access&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ClinicNet</title>
-      <link>http://localhost:1313/projects/project-1/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-1/</guid>
-      <description>&lt;p&gt;Multi-tenant B2B SaaS platform serving 120+ paying dental clinics across Mexico. Built as a solo founder handling architecture, development, deployment, and customer support.&lt;/p&gt;
-&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
+&lt;li&gt;&lt;strong&gt;Grafana + Prometheus + Loki&lt;/strong&gt; - Metrics, logs, and alerting across the whole fleet, plus Beszel for lightweight per-host monitoring&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ollama&lt;/strong&gt; - LLM inference on a GPU node (Dell R630) powered on-demand via iDRAC Redfish automation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pi-hole&lt;/strong&gt; - Network-wide DNS ad blocking&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Caddy&lt;/strong&gt; - Static site hosting behind Cloudflare Tunnel&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare Tunnel + Tailscale&lt;/strong&gt; - Zero-trust ingress and mesh VPN for secure remote access, with no ports exposed to the internet&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ansible&lt;/strong&gt; - Configuration management and automated deployments&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>ClinicNet</title><link>https://seulsale.com/projects/project-1/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://seulsale.com/projects/project-1/</guid><description>&lt;p&gt;Multi-tenant B2B SaaS platform serving 120+ paying dental clinics across Mexico. Built as a solo founder handling architecture, development, deployment, and customer support.&lt;/p&gt;
+&lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Backend&lt;/strong&gt; - Django with django-tenants for multi-tenancy, PostgreSQL with schema-per-tenant isolation&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt; - Next.js with responsive design for desktop and mobile use in clinics&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Billing&lt;/strong&gt; - Stripe subscription billing with automated invoicing and plan management&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Notifications&lt;/strong&gt; - WhatsApp Business API integration for automated appointment reminders&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;key-metrics&#34;&gt;Key Metrics&lt;/h2&gt;
+&lt;h2 id="key-metrics"&gt;Key Metrics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;120+ active paying clinics&lt;/li&gt;
 &lt;li&gt;Profitable and growing&lt;/li&gt;
 &lt;li&gt;Solo-developed from zero to production&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>

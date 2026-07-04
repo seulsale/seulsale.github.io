@@ -26,6 +26,7 @@ Self-hosted infrastructure on Proxmox VE running AWS ECS Anywhere clusters on lo
 - **AWS ECS Anywhere** - Hybrid cloud container orchestration running production SaaS workloads on local hardware
 - **Docker** - Container runtime for all self-hosted services
 - **Grafana + Prometheus + Loki** - Metrics, logs, and alerting across the whole fleet, plus Beszel for lightweight per-host monitoring
+- **Ollama** - LLM inference on a GPU node (Dell R630) powered on-demand via iDRAC Redfish automation
 - **Pi-hole** - Network-wide DNS ad blocking
 - **Caddy** - Static site hosting behind Cloudflare Tunnel
 - **Cloudflare Tunnel + Tailscale** - Zero-trust ingress and mesh VPN for secure remote access, with no ports exposed to the internet

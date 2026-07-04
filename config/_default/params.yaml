@@ -14,7 +14,7 @@ hugoblox:
     mode: system
     pack: "minimal"
     colors:
-      primary: "emerald"
+      primary: "sky"
       secondary: ""
       neutral: "slate"
     colors_light: {}

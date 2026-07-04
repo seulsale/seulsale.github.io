@@ -116,6 +116,18 @@ skills:
         level: 4
       - label: Next.js
         level: 4
+  - name: AI & LLM
+    items:
+      - label: LangGraph
+        level: 4
+      - label: LangChain
+        level: 4
+      - label: Databricks
+        level: 4
+      - label: MCP
+        level: 4
+      - label: Ollama
+        level: 4
   - name: Cloud & Infrastructure
     items:
       - label: Azure
