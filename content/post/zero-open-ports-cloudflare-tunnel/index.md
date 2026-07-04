@@ -2,7 +2,7 @@
 title: "Zero Open Ports: Publishing Homelab Services with Cloudflare Tunnel"
 subtitle: "Public URLs for self-hosted services without touching the router"
 summary: "Every public service in my homelab — Grafana, static sites, LLM inference — is reachable over HTTPS without a single forwarded port. Here's the ingress architecture and what I'd do differently."
-date: 2026-07-04
+date: 2026-03-15
 tags:
   - Homelab
   - Security

@@ -2,7 +2,7 @@
 title: "Running AWS ECS Anywhere on a Proxmox Homelab"
 subtitle: "Cloud-native orchestration, on-prem hardware, zero EC2 bill"
 summary: "How I run production SaaS workloads on ECS Anywhere inside a Proxmox VM — getting AWS's control plane, ECR, and deployment tooling while the compute lives in my house."
-date: 2026-07-04
+date: 2026-02-15
 tags:
   - Homelab
   - AWS

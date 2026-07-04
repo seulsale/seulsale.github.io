@@ -2,7 +2,7 @@
 title: "Powering a GPU Node On-Demand with iDRAC and Redfish"
 subtitle: "A Dell R630 that sleeps until I need LLM inference"
 summary: "A rack server with a GPU is great for self-hosted LLMs and terrible for a power bill. Here's the tiny Redfish-based tooling I use to boot it on demand and shut it down when I'm done."
-date: 2026-07-04
+date: 2026-04-15
 tags:
   - Homelab
   - Automation
