@@ -82,13 +82,23 @@
 
 /* ── Homelab services grid cards ── */
 /* Markdown blocks cap content at prose width; break the card grids and
-   diagram out of the narrow column and center them on the viewport */
+   diagram out of the narrow column and center them on the viewport.
+   Centered via symmetric negative margins — not margin-left + translateX,
+   whose pre-transform layout box makes Firefox reserve horizontal scroll. */
+.services-grid,
+.certs-grid {
+  --breakout-w: min(66rem, 92vw);
+}
+
+.arch-diagram {
+  --breakout-w: min(54rem, 92vw);
+}
+
 .services-grid,
 .certs-grid,
 .arch-diagram {
-  width: min(66rem, 92vw);
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: var(--breakout-w);
+  margin-inline: calc((100% - var(--breakout-w)) / 2);
 }
 
 .prose .services-grid a,
@@ -274,7 +284,6 @@
 
 /* ── Homelab architecture diagram ── */
 .arch-diagram {
-  width: min(54rem, 92vw);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
