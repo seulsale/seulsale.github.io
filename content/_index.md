@@ -119,8 +119,10 @@ sections:
               icon: hero/circle-stack
             - name: MCP
               icon: hero/puzzle-piece
-            - name: Ollama
-              icon: hero/cpu-chip
+            - name: Anthropic
+              icon: hero/chat-bubble-left-right
+            - name: OpenAI
+              icon: hero/bolt
             - name: LLM Evals
               icon: hero/beaker
         - name: Cloud & Infrastructure

@@ -126,7 +126,9 @@ skills:
         level: 4
       - label: MCP
         level: 4
-      - label: Ollama
+      - label: Anthropic
+        level: 4
+      - label: OpenAI
         level: 4
   - name: Cloud & Infrastructure
     items:
